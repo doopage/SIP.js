@@ -77,6 +77,9 @@ export class Inviter extends Session {
 
     // From tag
     this.fromTag = newTag();
+    if (options.params && options.params.fromTag) {
+      this.fromTag = options.params.fromTag;
+    }
 
     // Invite without SDP
     this.inviteWithoutSdp = options.inviteWithoutSdp !== undefined ? options.inviteWithoutSdp : this.inviteWithoutSdp;
